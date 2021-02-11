@@ -1,0 +1,205 @@
+---
+title: "Apresentação do clã Uchiha"
+subtitle: "sobre o uso do Rmarkdown e Xaringan no Rstudio"
+author: "Arthur Barros"
+institute: "Laboratório de Ecologia Aplicada, LEVA - UFPE"
+date: "12/02/2021"
+encoding: "UTF-8"
+output:
+  xaringan::moon_reader:
+    chakra: libs/remark-latest.min.js
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: center, middle
+background-image: url(https://i.pinimg.com/originals/52/c0/7e/52c07eb798572b24d2650dae11e81373.jpg)
+background-size: 50px
+background-position: 97% 2%
+
+# <font face="timesnewroman", size="12">Objetivo</font>
+
+--
+Apresentar noções gerais sobre o *`Rmarkdown`*
+--
+
+
+Mostrar algumas funcionalidades básicas do **`xaringan`** na prática
+
+---
+class: left
+background-image: url(https://i.pinimg.com/originals/52/c0/7e/52c07eb798572b24d2650dae11e81373.jpg)
+background-size: 50px
+background-position: 97% 2%
+
+# Rmarkdown 
+
+ - Texto + chuncks
+ 
+ - Ambiente que une muitas linguagens de programação.
+ 
+ - **`ctrl+shift+k`** e **`ctrl+alt+i`**
+ 
+ - Gera pdf, sites, blogs, livros
+ 
+ - [Otsutsuki](https://yihui.org/) Yihui Xie
+ 
+ - [Noções gerais](https://github.com/Barros082/Lab_mark_git)
+ 
+```{r, fig.align='right', out.width = '400px', echo=FALSE}
+
+knitr::include_graphics("https://i.pinimg.com/originals/22/c3/28/22c32873cd5ce7db9a5141cbc81b012a.gif")
+
+```
+
+---
+class: left
+background-image: url(https://i.pinimg.com/originals/52/c0/7e/52c07eb798572b24d2650dae11e81373.jpg)
+background-size: 50px
+background-position: 97% 2%
+
+# Xaringan
+
+ - Biblioteca *`remark.js`*
+```{r, fig.align='center', out.width = '150px', echo=FALSE}
+ knitr::include_graphics("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOf0aYObuTzbEp0A2xLsGMkWxtENx28xRcXV_V98exLDTh4TOTArxIqP1lCuv0xVyFN33osKVeye8yLutcfok&usqp=CAU&ec=45774424")
+```
+ 
+ - Biblioteca *`remedy`* 
+```{r, fig.align='center', out.width = '70px', echo=FALSE}
+ knitr::include_graphics("https://raw.githubusercontent.com/ThinkR-open/remedy/master/reference/figures/thinkr-hex-remedy.png")
+```
+ 
+ - Biblioteca *`knit`* 
+```{r, fig.align='center', out.width = '100px', echo=FALSE}
+ knitr::include_graphics("https://ih1.redbubble.net/image.543341214.1637/flat,750x1000,075,f.u6.jpg")
+```
+ 
+ - [Blog pessoal](https://beatrizmilz.com/) da Beatriz Milz
+```{r, fig.align='center', out.width = '80px', echo=FALSE}
+knitr::include_graphics("https://avatars.githubusercontent.com/u/42153618?s=460&u=f7973d0bdc2b40cbb7c8474793c6df518bec30be&v=4")
+```
+ 
+---
+class: left
+background-image: url(https://i.pinimg.com/originals/52/c0/7e/52c07eb798572b24d2650dae11e81373.jpg)
+background-size: 50px
+background-position: 97% 2%
+
+
+# Como funciona?
+
+Basicamente, é uma mistura de linguagens de programação
+
+.pull-left[
+ - O primeiro slide é diferente dos outros:
+ 
+ ```
+ title: ""
+subtitle: ""
+author: ""
+institute: ""
+date: ""
+*encoding: "UTF-8"
+output:
+xaringan::moon_reader:
+*chakra:libs/remark-latest.min.js
+lib_dir:libs
+nature:
+highlightStyle: github
+highlightLines: true
+countIncrementalSlides: false
+      ```
+]
+--
+.pull-right[
+
+ - Slides posteriores:
+ 
+```
+class: left
+background-image: url(link_imagem)
+background-size: 50px
+background-position: 97% 2%
+
+#Título
+
+Texto
+
+chunk - Knit
+
+```
+
+]
+
+---
+class: left
+background-image: url(https://i.pinimg.com/originals/52/c0/7e/52c07eb798572b24d2650dae11e81373.jpg)
+background-size: 50px
+background-position: 97% 2%
+
+# Algumas variações dos slides
+
+
+ - Quanto a organização dos textos
+ 
+   i) **`.pull.right[]`** e **`.pull-left[]`**
+   
+   ii) **`.right-column[]`** e **`.left-column[ ]`**
+
+
+ - Quanto a formatação de textos
+ 
+   i) Feito com css, no `class` .: **`class: "red", left, middle`**
+   
+   ii) Feito em html .: **`<font size = "3" color = "#Código" face="timesnewroman>Texto</font>"`**
+
+--
+
+<font Color="FF3333" size= "6">Obs: Vale lembrar que isso é o que tenho conhecimento atualmente. Com certeza, estudando mais, deve ter jeitos mais fáceis e intuitívos.</font>
+
+---
+class: left
+background-image: url(https://i.pinimg.com/originals/52/c0/7e/52c07eb798572b24d2650dae11e81373.jpg)
+background-size: 50px
+background-position: 97% 2%
+
+# Minhas perspectivas
+
+
+```{r, fig.align='center', out.width = '600px', echo=FALSE}
+knitr::include_graphics("https://criticalhits.com.br/wp-content/uploads/2019/04/shikamaru-pensando-01.jpg")
+```
+
+---
+class: left
+background-image: url(https://i.pinimg.com/originals/52/c0/7e/52c07eb798572b24d2650dae11e81373.jpg)
+background-size: 50px
+background-position: 97% 2%
+
+# Referências
+
+ 1. Apresentações da Beatriz Milz, principalmente do [rmarkdown](https://beatrizmilz.github.io/IME-27-08-2019/#1) e do [xaringan](https://beatrizmilz.github.io/aMostra-IME-2019-Xaringan/#1)
+ 
+ 1. Apresentação do Yihui Xie sobre o `xaringan`, criada com a vinheta do pacote. Disponível quando intalar o `xaringan` no rstudio
+ 
+ 1. Documentação do [knit](https://yihui.org/knitr/options/#cache) do Yihui Xie
+ 
+ 1. [Livro R Markdown](https://bookdown.org/yihui/rmarkdown/), principalmente os capítulos 7 e 8
+ 
+ 1. Todas as imagens estão com o url e fonte no script :)
+ 
+```{r, fig.align='center', out.width = '150px', echo=FALSE}
+knitr::include_graphics("https://avatars2.githubusercontent.com/u/163582?v=4")
+```
+
+---
+
+class: left
+background-image: url(http://pa1.narvii.com/6264/e8117e81ee23cdaae1d3e4b0a15e4b64d9cd32a5_00.gif)
+background-size: 500px
+background-position: 50% 75%
+
+# Todo os scripts e materias estão no meu endereço do [github](https://github.com/Barros082/Lab_mark_git), só fazer um *`fork`* do repositório Lab_mark_git
