@@ -1,0 +1,102 @@
+---
+title: "Markdown e Git"
+author: "Arthur Barros"
+date: "07/02/2021"
+output: html_document
+---
+
+
+# Criação de repositórios e link com o script no console
+
+Essa parte existe muitas explicações na internet e nesse link você pode consultar ao menos 3 formas de realizar isso. 
+
+A forma que eu mais gosto é manualmente, pois acredito que seja o caminho mais intuitivo e mais difícil de encontrar possíveis erros. Basicamente, consiste em três passos:
+
+ - Criar um repositório no git ou faça um fork do repositório de alguém
+ - Criar um diretório no seu computador, onde você deixará armazenado as cópias do repositório do github
+ - Linkar o repositório com o seu computador atraves do rstudio
+ 
+
+# Rmarkdown
+
+É um script mágico, mais fácil de organizar. Quando a gente fala em rmarkdown e diversos outros pacotes e funcionalidades, é necessário falar do Yihui Xie, o deus do Rmarkdown e suas variações. [^1]
+
+É basicamente dividido em textos e códigos que são colocados nos chunks (`crtl+alt+i`) para gerar um documento (pdf, html, entre outros formatos). Esse documento é formado com o kint (`ctrl+shift+k`). Entretanto, existem derivações desse modelo de script, podendo ser feitos blogs (`pacote::blogdown`), livros (`pacote::bookdown`) e apresentações (`pacote::xaringan`)
+
+## Noções básicas para html
+
+Esse conteúdo tá disponível de modo muito mais detalhada e bem feito nos vídeos do Canal da Fernanda Perez no Youtube, ela me ajudou muito a aprender a mexer o básicão mesmo.[^3]
+
+### Quanto a escrita e organização
+
+ - `**negrito**` - **negrito**
+ 
+ - `*itálico*` - *itálico*
+ 
+ - Colocar um termo, palavra, expressão no formato de código - `` `código` ``
+ 
+ - Citação - `> Citação`
+ 
+ - Títulos e subtítulos: É basicamente só colocar um `#` e dar espaço antes de colocar a palavra. Ex: `# Título; ## Subtítulo, ### Subtítulo do subtítulo, #### etc`.
+ 
+ - Fórmulas matemáticas: Existem dois jeitos básicos `$x²$` e `$$x²$$`.
+ 
+ - Dá para usar html dentro do markdown. Então, por exemplo trocar a fonte da letra ou a cor: `<font face="calibri" Color="FF0099">Tentativa 1</font>"`
+ <font face="calibri" Color="FF0099">Na quarta usamos rosa</font>`
+ 
+ - Referências: É só colocar `[^1]` depois do texto, e chamar o mesmo código `[^1]:` nas referência
+ 
+ - Hiperlink: `[Nome do Link](Endereço do Link)`
+ 
+ - Para colocar imagens de endereços eletrônicos é só colocar uma exclamação antes do colchete que está o nome do link:
+ `![Gatinho](https://i.pinimg.com/originals/ca/9b/1d/ca9b1de4f62ea873cb9bbaa396e9e21b.jpg)`
+  ![Gatinho](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9VRgoTsA_2si0Sk5Zv8kUTMslxkgXuGzu7939R0D0DllhM6Okwhd7xMnJtjF1MquEvSpPoWuUO8-2h6X5dvE&usqp=CAU&ec=45774424){ width=15% }
+
+
+### Quanto a fórmulas e pacotes
+
+Bastante usadas: `warning`, `message`, `erro `, `echo`, `eval`, `collapse`
+
+`collapse = TRUE` vai fazer com que o output da análise apareca dentro do chunck no html. O default é que qualquer resultado seja separado, então o chunk vai sendo colocado em pedaços no html caso você não utilize essa função. 
+
+`Echo = TRUE` vai rodar o código e não mostrar o output no html;
+
+`Eval = TRUE ou c(1,2,6)` Vai dizer ao código quais linhas são para rodar e quais não são. Caso você opte por colocar false ou true, ele vai rodar e não rodar o código;
+
+```{r Pacotes1, warning=FALSE, echo=TRUE,  message=FALSE}
+library(tidyverse)
+library(BiodiversityR)
+library(rmarkdown)
+library(knitr)
+```
+
+```{r Pacotes2, warning=FALSE, eval=FALSE,  message=FALSE}
+library(vegan)
+library(ggplot2)
+
+```
+
+Outras funções bastante comuns são os uso de caches e figuras. Existem muitos códigos do knit e você pode consultar todos aqui [^2]. Falndo primeiramente do `cache`, particulamente eu acho mais complexo. Basicamente, você vai pegar um pedaço do chunk ou o chunk todo e armazenar ele para que evite que seja modificado posteriormente. 
+
+As funções sobre as figuras, uso estas com frequência:
+
+ - `fig.align`: Que basicamente alinha a figura no html.
+ 
+ - `fig.width`, `fig.height`: Define o tamanho da imagem, basicamente. 
+ 
+ - `fig.show`: Você modifica as imagens que existem no chunk para a ordem que você queira. 
+
+## Noções básicas para o xaringan
+
+Instale os pacotes e posteriormente feche o rstudio e abra novamente.
+```{r intalando xaringan, warning=FALSE, message=FALSE}
+#install.packages("xaringan")
+library(xaringan)
+```
+
+
+
+# Referências
+[^1]: Disponível no [site pessoal](https://yihui.org/) do Yihui Xie
+[^2]: Disponível na [descrição do pacote knit](https://yihui.org/knitr/options/#cache), do Yihui Xie
+[^3]: Fernanda Peres: Estatística aplicada a vida real, [video-aulas Rmarkdown](https://www.youtube.com/watch?v=obxa5VH4WvY&list=PLOw62cBQ5j9VV0WR533an6wmh9dZFUFKJ)
